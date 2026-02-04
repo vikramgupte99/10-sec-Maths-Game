@@ -9,20 +9,25 @@ var equationValue;
 //function for equation
 $(document).on('click','#startBtn',function () {
     console.log('Start button working');
+    createEquation();
+    countdown();
+    inputFunc();
+});
+
+//function to create equation
+var createEquation = function () {
     firstNum = Math.floor(Math.random() * 10) + 1;
     secondNum = Math.floor(Math.random() * 10) + 1;
     console.log(firstNum);
     console.log(secondNum);
     equationValue = firstNum + secondNum;
     $('.equation').html(firstNum + ' ' + '+' + ' ' + secondNum);
-    countdown();
-    inputFunc();
-});
+}
 
 //function for timer
 var countdown = function () {
+    seconds = 10;
     $('.counter').html(seconds  + ' seconds left');
-
     if(!timer) {
         timer = setInterval(function () {
             seconds--;
@@ -31,8 +36,10 @@ var countdown = function () {
             if(seconds <= 0) {
                 clearInterval(timer);
                 timer = null;
+                score = 0;
                 seconds = 0;
                 console.log(seconds);
+                $('.score span').html(score);
                 $('.equation').html("GAME OVER");
                 $('.counter').html("Time over");
             }
@@ -52,6 +59,12 @@ var inputFunc = function () {
         seconds++;
         $('.counter').html(seconds  + ' seconds left');
         $('input').val('');
+        createEquation();
+    }
+
+    if(score > highScore) {
+        highScore = score;
+        $('.highScore span').html(highScore);
     }
 })
 };
