@@ -1,4 +1,8 @@
-.color {
-    font-size: 60px;
-    color:blue;
+html {
+    height: 100%;
+    margin: 0;
+}
+body {
+    min-height: 100vh;
+    background-color: #065b7c !important;
 }
