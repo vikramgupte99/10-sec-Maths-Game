@@ -13,6 +13,7 @@ var operator;
 //function for equation
 $('#startBtn').click(function () {
     console.log('Start button working');
+    $('.input').prop('disabled',false);
     createEquation();
     countdown();
     inputFunc();
@@ -82,6 +83,8 @@ var countdown = function () {
                 score = 0;
                 seconds = 0;
                 console.log(seconds);
+                $('.input').prop('disabled',true);
+                $('.input').val('');
                 $('.score span').html(score);
                 $('.equation').html("GAME OVER");
                 $('.counter').html("Time over");
