@@ -14,6 +14,7 @@ var operator = '+';
 //function for equation
 $('#startBtn').click(function () {
     console.log('Start button working');
+    $(this).addClass('stopCSS');
     $(this).html('RESTART');
     $('.input').prop('disabled',false);
     createEquation();
@@ -24,22 +25,22 @@ $('#startBtn').click(function () {
 //function for operator
 $('.add').click(function () {
     operator = '+';
-    $('.equation').html("You chose '+' operator");
+    $('.equation').html("You chose '➕' operator");
     });
 
  $('.subtract').click(function () {
     operator = '-';
-    $('.equation').html("You chose '-' operator");
+    $('.equation').html("You chose '➖' operator");
     })
 
  $('.multiply').click(function () {
     operator = '*';
-    $('.equation').html("You chose '*' operator");
+    $('.equation').html("You chose '✖' operator");
     })
 
  $('.divide').click(function () {
     operator = '/';
-    $('.equation').html("You chose '/' operator");
+    $('.equation').html("You chose '➗' operator");
     })
 
 //function to create equation
@@ -84,6 +85,7 @@ var countdown = function () {
                 seconds = 0;
                 console.log(seconds);
                 $('#startBtn').html('START');
+                $('#startBtn').removeClass('stopCSS');
                 $('.input').prop('disabled',true);
                 $('.input').val('');
                 $('.score span').html(score);
