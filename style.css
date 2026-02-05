@@ -6,3 +6,57 @@ body {
     min-height: 100vh;
     background-color: #065b7c !important;
 }
+.header{
+    border: 2px solid rgb(231, 46, 77);
+    font-size: 60px;
+    color: #0efa36;
+    letter-spacing: 0.1em;
+    font-style: revert;
+    font-family:fantasy;
+    text-shadow: 5px 5px 15px rgb(241, 15, 15);
+    box-shadow: 5px 5px 8px blue;
+  }
+  .instruction ul span {
+    letter-spacing: 0.1em;
+    text-decoration:underline;
+    font-weight: bold;
+    font-size: larger;
+    color:rgb(190, 190, 231);
+  }
+  .instruction {
+    font-size: 13px;
+  }
+  .counter{
+    font-weight: bold;
+    font-size: 50px;
+  }
+  .equation {
+    font-size: 50px;
+  }
+  #startBtn {
+    border: 1px solid black;
+    background-color: blueviolet;
+    font-weight: bold;
+  }
+  .stopCSS {
+    border: 1px solid black;
+    background-color: rgb(218, 82, 18) !important;
+    font-weight: bold;
+  }
+  .buttonOp {
+    background-color: yellow;
+  }
+  .buttonOp:hover {
+    background-color: blueviolet !important;
+  }
+  .buttonOp:active {
+    background-color: rgb(226, 43, 43) !important;
+  }
+  .input {
+    border: 2px solid red;
+    border-radius: 10px;
+    color: brown;
+    height:50px;
+    font-weight: bolder;
+    font-size: 25px;
+  }
