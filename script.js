@@ -1,3 +1,5 @@
+$(document).ready(function () {
+
 var firstNum;
 var secondNum;
 var seconds = 10;
@@ -5,14 +7,37 @@ var score = 0;
 var highScore = 0;
 var timer = null;
 var equationValue;
+var operator;
+
 
 //function for equation
-$(document).on('click','#startBtn',function () {
+$('#startBtn').click(function () {
     console.log('Start button working');
     createEquation();
     countdown();
     inputFunc();
 });
+
+//function for operator
+$('.add').click(function () {
+    operator = '+';
+    $('.equation').html("You chose '+' operator");
+    });
+
+ $('.subtract').click(function () {
+    operator = '-';
+    $('.equation').html("You chose '-' operator");
+    })
+
+ $('.multiply').click(function () {
+    operator = '*';
+    $('.equation').html("You chose '*' operator");
+    })
+
+ $('.divide').click(function () {
+    operator = '/';
+    $('.equation').html("You chose '/' operator");
+    })
 
 //function to create equation
 var createEquation = function () {
@@ -20,9 +45,27 @@ var createEquation = function () {
     secondNum = Math.floor(Math.random() * 10) + 1;
     console.log(firstNum);
     console.log(secondNum);
-    equationValue = firstNum + secondNum;
-    $('.equation').html(firstNum + ' ' + '+' + ' ' + secondNum);
-}
+    updateEquation();
+}  
+
+//function to update equation
+var updateEquation = function () {
+    if(operator === '+') {
+        equationValue = firstNum + secondNum;
+      }
+      if(operator === '-') {
+        firstNum = firstNum + secondNum;
+        equationValue = firstNum - secondNum;
+      }
+      if(operator === '*') {
+        equationValue = firstNum * secondNum;
+      }
+      if(operator === '/') {
+        firstNum = firstNum * secondNum;
+        equationValue = firstNum / secondNum;
+      }
+      $('.equation').html(firstNum + " " + operator + " " + secondNum);
+    } 
 
 //function for timer
 var countdown = function () {
@@ -68,3 +111,5 @@ var inputFunc = function () {
     }
 })
 };
+
+}); //for Dom ready
