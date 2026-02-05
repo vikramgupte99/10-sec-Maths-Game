@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    console.log('DOM ready');
 
 var firstNum;
 var secondNum;
@@ -7,12 +8,13 @@ var score = 0;
 var highScore = 0;
 var timer = null;
 var equationValue;
-var operator;
+var operator = '+';
 
 
 //function for equation
 $('#startBtn').click(function () {
     console.log('Start button working');
+    $(this).html('RESTART');
     $('.input').prop('disabled',false);
     createEquation();
     countdown();
@@ -44,8 +46,6 @@ $('.add').click(function () {
 var createEquation = function () {
     firstNum = Math.floor(Math.random() * 10) + 1;
     secondNum = Math.floor(Math.random() * 10) + 1;
-    console.log(firstNum);
-    console.log(secondNum);
     updateEquation();
 }  
 
@@ -83,6 +83,7 @@ var countdown = function () {
                 score = 0;
                 seconds = 0;
                 console.log(seconds);
+                $('#startBtn').html('START');
                 $('.input').prop('disabled',true);
                 $('.input').val('');
                 $('.score span').html(score);
@@ -107,7 +108,8 @@ var inputFunc = function () {
         $('input').val('');
         createEquation();
     }
-
+     
+    //for High score
     if(score > highScore) {
         highScore = score;
         $('.highScore span').html(highScore);
