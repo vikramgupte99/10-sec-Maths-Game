@@ -21,10 +21,16 @@ body {
     text-decoration:underline;
     font-weight: bold;
     font-size: larger;
-    color:rgb(190, 190, 231);
+    color:rgb(16, 16, 156);
   }
   .instruction {
+    background-color: rgb(238, 161, 67);
     font-size: 13px;
+  }
+  .instruction ul li {
+    letter-spacing: 0.1em;
+    font-weight: bold;
+    color:rgb(156, 16, 58);
   }
   .counter{
     font-weight: bold;
